@@ -26,7 +26,7 @@ public class ServletServer {
 			DeploymentInfo servletBuilder = deployment().setClassLoader(ServletServer.class.getClassLoader())
 					.setContextPath(MYAPP).setDeploymentName("test.war")
 					.setResourceManager(new FileResourceManager(new File("src/main/webapp"), 1024))
-					.addServlets(servlet("userinfo", UserInfo.class).addMapping("/UserInfo"),
+					.addServlets(
 							servlet("MyServlet", MessageServlet.class).addInitParam("message", "Hello ENSAI")
 									.addMapping("/myservlet"),
 							JspServletBuilder.createServlet("Default Jsp Servlet", "*.jsp")
